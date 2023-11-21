@@ -168,6 +168,24 @@ controls:
       description:  |
         Specify a fixed contrast parameter. Normal contrast is given by the
         value 1.0; larger values produce images with more contrast.
+        
+  - ContrastLoHistogram:
+      type: float
+
+  - ContrastLoLevel:
+      type: float
+
+  - ContrastLoMax:
+      type: float
+
+  - ContrastHiHistogram:
+      type: float
+
+  - ContrastHiLevel:
+      type: float
+
+  - ContrastHiMax:
+      type: float
 
   - Lux:
       type: float

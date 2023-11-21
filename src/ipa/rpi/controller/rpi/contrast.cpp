@@ -65,6 +65,37 @@ void Contrast::setContrast(double contrast)
 	contrast_ = contrast;
 }
 
+void Contrast::setConfigLoHistogram(double loHistogram)
+{
+	config_.loHistogram = loHistogram;
+}
+
+void Contrast::setConfigLoLevel(double loLevel)
+{
+	config_.loLevel = loLevel;
+}
+
+void Contrast::setConfigLoMax(double loMax)
+{
+	config_.loMax = loMax;
+}
+
+void Contrast::setConfigHiHistogram(double hiHistogram)
+{
+	config_.hiHistogram = hiHistogram;
+}
+
+void Contrast::setConfigHiLevel(double hiLevel)
+{
+	config_.hiLevel = hiLevel;
+}
+
+void Contrast::setConfigHiMax(double hiMax)
+{
+	config_.hiMax = hiMax;
+}
+
+
 void Contrast::initialise()
 {
 	/*

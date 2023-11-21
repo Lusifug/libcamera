@@ -914,6 +914,96 @@ void IpaBase::applyControls(const ControlList &controls)
 			break;
 		}
 
+		case controls::CONTRAST_LO_HISTOGRAM: {
+			RPiController::ContrastAlgorithm *contrast = dynamic_cast<RPiController::ContrastAlgorithm *>(
+				controller_.getAlgorithm("contrast"));
+			if (!contrast) {
+				LOG(IPARPI, Warning)
+					<< "Could not set CONTRAST_LO_HISTOGRAM - no contrast algorithm";
+				break;
+			}
+
+			contrast->setConfigLoHistogram(ctrl.second.get<float>());
+			libcameraMetadata_.set(controls::ContrastLoHistogram,
+					       ctrl.second.get<float>());
+			break;
+		}
+
+		case controls::CONTRAST_LO_LEVEL: {
+			RPiController::ContrastAlgorithm *contrast = dynamic_cast<RPiController::ContrastAlgorithm *>(
+				controller_.getAlgorithm("contrast"));
+			if (!contrast) {
+				LOG(IPARPI, Warning)
+					<< "Could not set CONTRAST_LO_LEVEL - no contrast algorithm";
+				break;
+			}
+
+			contrast->setConfigLoLevel(ctrl.second.get<float>());
+			libcameraMetadata_.set(controls::ContrastLoLevel,
+					       ctrl.second.get<float>());
+			break;
+		}
+
+		case controls::CONTRAST_LO_MAX: {
+			RPiController::ContrastAlgorithm *contrast = dynamic_cast<RPiController::ContrastAlgorithm *>(
+				controller_.getAlgorithm("contrast"));
+			if (!contrast) {
+				LOG(IPARPI, Warning)
+					<< "Could not set CONTRAST_LO_MAX - no contrast algorithm";
+				break;
+			}
+
+			contrast->setConfigLoMax(ctrl.second.get<float>());
+			libcameraMetadata_.set(controls::ContrastLoMax,
+					       ctrl.second.get<float>());
+			break;
+		}
+
+		case controls::CONTRAST_HI_HISTOGRAM: {
+			RPiController::ContrastAlgorithm *contrast = dynamic_cast<RPiController::ContrastAlgorithm *>(
+				controller_.getAlgorithm("contrast"));
+			if (!contrast) {
+				LOG(IPARPI, Warning)
+					<< "Could not set CONTRAST_HI_HISTOGRAM - no contrast algorithm";
+				break;
+			}
+
+			contrast->setConfigHiHistogram(ctrl.second.get<float>());
+			libcameraMetadata_.set(controls::ContrastHiHistogram,
+					       ctrl.second.get<float>());
+			break;
+		}
+
+		case controls::CONTRAST_HI_LEVEL: {
+			RPiController::ContrastAlgorithm *contrast = dynamic_cast<RPiController::ContrastAlgorithm *>(
+				controller_.getAlgorithm("contrast"));
+			if (!contrast) {
+				LOG(IPARPI, Warning)
+					<< "Could not set CONTRAST_HI_LEVEL - no contrast algorithm";
+				break;
+			}
+
+			contrast->setConfigHiLevel(ctrl.second.get<float>());
+			libcameraMetadata_.set(controls::ContrastHiLevel,
+					       ctrl.second.get<float>());
+			break;
+		}
+
+		case controls::CONTRAST_HI_MAX: {
+			RPiController::ContrastAlgorithm *contrast = dynamic_cast<RPiController::ContrastAlgorithm *>(
+				controller_.getAlgorithm("contrast"));
+			if (!contrast) {
+				LOG(IPARPI, Warning)
+					<< "Could not set CONTRAST_HI_MAX - no contrast algorithm";
+				break;
+			}
+
+			contrast->setConfigHiMax(ctrl.second.get<float>());
+			libcameraMetadata_.set(controls::ContrastHiMax,
+					       ctrl.second.get<float>());
+			break;
+		}
+
 		case controls::SATURATION: {
 			/* Silently ignore this control for a mono sensor. */
 			if (monoSensor_)

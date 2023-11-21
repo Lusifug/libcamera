@@ -37,6 +37,12 @@ public:
 	int read(const libcamera::YamlObject &params) override;
 	void setBrightness(double brightness) override;
 	void setContrast(double contrast) override;
+	void setConfigLoHistogram(double loHistogram) override;
+	void setConfigLoLevel(double loLevel) override;
+	void setConfigLoMax(double loMax) override;
+	void setConfigHiHistogram(double hiHistogram) override;
+	void setConfigHiLevel(double hiLevel) override;
+	void setConfigHiMax(double hiMax) override;
 	void initialise() override;
 	void prepare(Metadata *imageMetadata) override;
 	void process(StatisticsPtr &stats, Metadata *imageMetadata) override;
